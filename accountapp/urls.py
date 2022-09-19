@@ -1,7 +1,9 @@
 from django.urls import path, include
+from rest_framework.authtoken import views
 
-from accountapp.views import hello_world_drf
+from accountapp.views import Login
 
 urlpatterns = [
-    path('hello_world_drf/', hello_world_drf.as_view()),
+    path('login/', Login.as_view()),
+    path('auth/', views.obtain_auth_token, name='user_auth-create'),
 ]
