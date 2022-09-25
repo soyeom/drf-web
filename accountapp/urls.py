@@ -1,9 +1,8 @@
+from django.contrib import admin
 from django.urls import path, include
-from rest_framework.authtoken import views
 
-from accountapp.views import Login
+from accountapp.api import UserList
 
 urlpatterns = [
-    path('login/', Login.as_view()),
-    path('auth/', views.obtain_auth_token, name='user_auth-create'),
+    path('api/',UserList.as_view()),
 ]
